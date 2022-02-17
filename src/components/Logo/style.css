@@ -1,0 +1,21 @@
+.logo {
+  position: relative;
+  width: 50px;
+  aspect-ratio: 1;
+}
+
+.logo::before,
+.logo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+}
+
+.logo::after {
+  background: radial-gradient(circle 5px, #fff 90%, #0000),
+    radial-gradient(circle 10px, var(--bg-theme) 90%, #0000),
+    linear-gradient(#fff 0 0) top / 100% calc(45%),
+    linear-gradient(#fff 0 0) bottom / 100% calc(45%);
+  background-repeat: no-repeat;
+}

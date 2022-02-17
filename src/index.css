@@ -1,13 +1,54 @@
-body {
+:root {
+  /* Cel */
+  --fz-title-s: 2rem;
+  --fz-subtitle-s: 1.5rem;
+  --fz-body-s: 1.3em;
+  --fz-details-s: 1rem;
+  --fz-small-s: 0.9rem;
+
+  /* Monitor */
+  --fz-title-l: 2.7rem;
+  --fz-subtitle-l: 1.7rem;
+  --fz-body-l: 1.5em;
+  --fz-details-l: 1.3rem;
+  --fz-small-l: 1.15rem;
+
+  /* Colors */
+  --color-theme: #fff;
+
+  --bg-theme: #f98487;
+  --bg-theme-shadow: #f8a9ad;
+
+  --bg-red: #f78183;
+  --bg-blue: #7abdf7;
+  --bg-yellow: #ffc000;
+  --bg-green: #4ecfb6;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  padding: 0;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+ul {
+  list-style-type: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
