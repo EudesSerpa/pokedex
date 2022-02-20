@@ -1,0 +1,33 @@
+.form-search {
+  margin-top: 15px;
+}
+
+.form-search label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-theme);
+  background: var(--bg-theme-shadow);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.form-search svg {
+  width: 1.3em;
+  aspect-ratio: 1;
+  margin-left: 5px;
+}
+
+.form-search input {
+  width: 90%;
+  padding: 6px 4px;
+  color: inherit;
+  background: inherit;
+  font-size: var(--fz-small-s);
+  line-height: 1.5;
+  border: none;
+  outline: none;
+}
+.form-search input::placeholder {
+  color: inherit;
+}

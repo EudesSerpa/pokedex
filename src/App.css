@@ -2,19 +2,15 @@
   width: 100%;
   max-width: 90rem;
   margin: 0 auto;
-  padding: 0 0.5em;
+  padding: 0 0.8em;
 }
 
 .App-content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   height: auto;
-  min-height: 100vh;
-  color: var(--theme-body-txt);
-  background-color: var(--theme-body-bg);
-  text-align: left;
+  color: var(--color-theme);
 }
 
 .App-title {

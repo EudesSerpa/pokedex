@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
+
 :root {
   /* Cel */
   --fz-title-s: 2rem;
@@ -19,10 +21,28 @@
   --bg-theme: #f98487;
   --bg-theme-shadow: #f8a9ad;
 
-  --bg-red: #f78183;
-  --bg-blue: #7abdf7;
-  --bg-yellow: #ffc000;
-  --bg-green: #4ecfb6;
+  --bg-fire: #f78183; /*#F08030*/
+  --bg-water: #7abdf7;
+  --bg-electric: #ffc000; /*#F8D030*/
+  --bg-grass: #59d0b9; /*#78C850*/
+
+  --bg-bug: #a8b820;
+  --bg-dark: #705848;
+  --bg-dragon: #7038f8;
+  --bg-fairy: #ee99ac;
+  --bg-fighting: #c03028;
+  --bg-flying: #a890f0;
+  --bg-ghost: #705898;
+  --bg-ground: #e0c068;
+  --bg-ice: #98d8d8;
+  --bg-normal: #a8a878;
+  --bg-poison: #a040a0;
+  --bg-psychic: #f85888;
+  --bg-rock: #b8a038;
+  --bg-steel: #b8b8d0;
+  --bg-unknown: #68a090;
+
+  --bg-shadow: #493963;
 }
 
 html {
@@ -38,7 +58,7 @@ html {
 }
 
 body {
-  font-family: "Manrope", sans-serif;
+  font-family: "Lato", "Manrope", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

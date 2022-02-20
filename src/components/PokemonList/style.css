@@ -1,0 +1,11 @@
+/* Grid container */
+.pokemons-grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-template-rows: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 8px 10px;
+  place-content: center;
+  width: 100%;
+  min-height: 55vh;
+  padding: 0 10px 15px;
+}

@@ -1,0 +1,209 @@
+/* Pokemon card */
+.card {
+  position: relative;
+  height: 115px;
+  padding: 10px;
+  color: var(--color-theme);
+  border-radius: 10px;
+  font-weight: 600;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-transform: capitalize;
+}
+.card:hover {
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
+  transform: scale(1.03);
+}
+
+/* Background by type */
+.card.grass {
+  background: var(--bg-grass);
+  background: radial-gradient(
+    circle at bottom right,
+    #f4f8f6 -50%,
+    var(--bg-grass) 50%
+  );
+}
+.card.fire {
+  background: var(--bg-fire);
+  background: radial-gradient(
+    circle at bottom right,
+    #f4f8f6 -50%,
+    var(--bg-fire) 50%
+  );
+}
+.card.water {
+  background: var(--bg-water);
+  background: radial-gradient(
+    circle at bottom right,
+    #f4f8f6 -50%,
+    var(--bg-water) 50%
+  );
+}
+.card.electric {
+  background: var(--bg-electric);
+  background: radial-gradient(
+    circle at bottom right,
+    #f4f8f6 -50%,
+    var(--bg-electric) 50%
+  );
+}
+.card.bug {
+  background: var(--bg-bug);
+  background: radial-gradient(
+    circle at bottom right,
+    #f4f8f6 -50%,
+    var(--bg-bug) 50%
+  );
+}
+.card.dark {
+  background: var(--bg-dark);
+  background: radial-gradient(
+    circle at bottom right,
+    #f4f8f6 -50%,
+    var(--bg-dark) 50%
+  );
+}
+.card.dragon {
+  background: var(--bg-dragon);
+  background: radial-gradient(
+    circle at bottom right,
+    #f4f8f6 -50%,
+    var(--bg-dragon) 50%
+  );
+}
+.card.fairy {
+  background: var(--bg-fairy);
+  background: radial-gradient(
+    circle at bottom right,
+    #f4f8f6 -50%,
+    var(--bg-fairy) 50%
+  );
+}
+.card.fighting {
+  background: var(--bg-fighting);
+  background: radial-gradient(
+    circle at bottom right,
+    #f4f8f6 -50%,
+    var(--bg-fighting) 50%
+  );
+}
+.card.flying {
+  background: var(--bg-flying);
+  background: radial-gradient(
+    circle at bottom right,
+    #f4f8f6 -50%,
+    var(--bg-flying) 50%
+  );
+}
+.card.ghost {
+  background: var(--bg-ghost);
+  background: radial-gradient(
+    circle at bottom right,
+    #f4f8f6 -50%,
+    var(--bg-ghost) 50%
+  );
+}
+.card.ground {
+  background: var(--bg-ground);
+  background: radial-gradient(
+    circle at bottom right,
+    #f4f8f6 -50%,
+    var(--bg-ground) 50%
+  );
+}
+.card.ice {
+  background: var(--bg-ice);
+  background: radial-gradient(
+    circle at bottom right,
+    #f4f8f6 -50%,
+    var(--bg-ice) 50%
+  );
+}
+.card.normal {
+  background: var(--bg-normal);
+  background: radial-gradient(
+    circle at bottom right,
+    #f4f8f6 -50%,
+    var(--bg-normal) 50%
+  );
+}
+.card.poison {
+  background: var(--bg-poison);
+  background: radial-gradient(
+    circle at bottom right,
+    #f4f8f6 -50%,
+    var(--bg-poison) 50%
+  );
+}
+.card.psychic {
+  background: var(--bg-psychic);
+  background: radial-gradient(
+    circle at bottom right,
+    #f4f8f6 -50%,
+    var(--bg-psychic) 50%
+  );
+}
+.card.rock {
+  background: var(--bg-rock);
+  background: radial-gradient(
+    circle at bottom right,
+    #f4f8f6 -50%,
+    var(--bg-rock) 50%
+  );
+}
+.card.steel {
+  background: var(--bg-steel);
+  background: radial-gradient(
+    circle at bottom right,
+    #f4f8f6 -50%,
+    var(--bg-steel) 50%
+  );
+}
+.card.unknown {
+  background: var(--bg-unknown);
+  background: radial-gradient(
+    circle at bottom right,
+    #f4f8f6 -50%,
+    var(--bg-unknown) 50%
+  );
+}
+.card.shadow {
+  background: var(--bg-shadow);
+  background: radial-gradient(
+    circle at bottom right,
+    #f4f8f6 -50%,
+    var(--bg-shadow) 50%
+  );
+}
+/* end */
+
+.card header,
+.details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pokemon-number {
+  font-size: var(--fz-body-s);
+  color: #fff;
+  opacity: 0.5;
+}
+
+.types li {
+  margin: 8px 0;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: var(--fz-small-s);
+  font-weight: 400;
+  background: rgba(255, 255, 255, 0.2);
+  text-align: center;
+}
+
+.img-container {
+  max-width: 100%;
+  width: 80px;
+  aspect-ratio: 1;
+}

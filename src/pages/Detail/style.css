@@ -1,0 +1,116 @@
+.App-title {
+  margin-bottom: 3px;
+}
+
+.details-section {
+  position: relative;
+  min-height: 100vh;
+  color: var(--color-theme);
+  background: var(--bg-green);
+  overflow: hidden;
+  z-index: 0;
+}
+.details-section::after {
+  content: "";
+  position: absolute;
+  top: 8%;
+  right: 0;
+  width: 300px;
+  aspect-ratio: 1;
+  background: radial-gradient(circle 35px, rgba(255, 255, 255, 0.13) 95%, #0000),
+    radial-gradient(circle 55px, var(--bg-green) 98%, #0000),
+    linear-gradient(rgba(255, 255, 255, 0.13) 0 0) top / 100% calc(47%),
+    linear-gradient(rgba(255, 255, 255, 0.13) 0 0) bottom / 100% calc(47%);
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+/* Buttons */
+.buttons a {
+  position: absolute;
+  top: 15px;
+  display: inline-block;
+  padding: 5px;
+}
+
+.buttons a:last-of-type {
+  right: 10px;
+}
+
+.buttons a:hover {
+  transform: scale(1.1);
+}
+
+/* Pokemon details */
+.details-section header {
+  margin-top: 50px;
+}
+
+.number {
+  font-size: var(--fz-body-s);
+  font-weight: 600;
+}
+.type {
+  font-size: var(--fz-small-s);
+}
+
+/* Pokemon img */
+.details-section .img-container {
+  width: 75%;
+  margin: 0 auto;
+}
+
+/* Types */
+.details-section .types {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.details-section .types li:not(li:first-of-type) {
+  display: inline-block;
+  margin-left: 15px;
+}
+
+/* Nav versions */
+.details-section .nav-menu {
+  overflow-x: scroll;
+}
+
+.details-section .nav-menu ul {
+  padding: 0;
+}
+
+.details-section .nav-menu li a {
+  width: 70px;
+  color: var(--color-theme);
+  text-align: center;
+}
+.details-section .nav-menu li a:hover {
+  color: var(--color-theme);
+}
+.details-section .nav-menu li a.active {
+  border-bottom: 3px solid var(--color-theme);
+}
+
+.version-description {
+  min-height: 44px;
+  margin-bottom: 15px;
+  font-size: var(--fz-small-s);
+  line-height: 1.5;
+}
+
+/* Atribute Table */
+.attribute-table {
+  width: 100%;
+  margin: 3px 0 10px;
+  font-size: var(--fz-small-s);
+}
+
+.attribute {
+  display: inline-block;
+  padding: 1px 0;
+  margin-right: 15px;
+  font-weight: 600;
+}
