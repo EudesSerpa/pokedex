@@ -1,41 +1,29 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useCallback, useRef } from "react";
+import debounce from "just-debounce-it";
 import PokemonList from "components/PokemonList";
 import SearchForm from "components/SearchForm";
+import Spinner from "components/Spinner";
+import { usePokemons } from "hooks/usePokemons";
+import { useNearScreen } from "hooks/useNearScreen";
+
 import "./style.css";
 
-import { getPokemons } from "services/getPokemons";
-import { type } from "@testing-library/user-event/dist/type";
-
 export default function Home() {
-  const [pokemons, setPokemons] = useState([]);
+  const visorRef = useRef(null);
+  const { pokemons, isLoadingPage, setPage } = usePokemons();
+  const { isVisible } = useNearScreen({
+    distance: "200px",
+    externalRef: isLoadingPage ? null : visorRef,
+    once: false,
+  });
 
   useEffect(() => {
-    let didCancel = false;
+    if (isVisible) {
+      console.log(isVisible);
 
-    if (!didCancel) {
-      getPokemons()
-        .then((body) => {
-          const data = body.map((pokemon) => {
-            const { id, name, types, sprites } = pokemon;
-
-            const typesName = types.map((type) => type.type.name);
-
-            const url = sprites.other.home?.front_default;
-
-            return { id, name, url, typesName };
-          });
-
-          console.log(data);
-
-          setPokemons(data);
-        })
-        .catch((e) => console.log(e));
+      debounce(() => setPage((prevPage) => prevPage + 1), 200)();
     }
-
-    return () => {
-      didCancel = true;
-    };
-  }, []);
+  }, [isVisible, setPage]);
 
   return (
     <>
@@ -65,6 +53,10 @@ export default function Home() {
         </nav>
 
         <PokemonList pokemons={pokemons} />
+
+        {isLoadingPage && <Spinner />}
+
+        <div id="visor" ref={visorRef} />
       </div>
     </>
   );

@@ -19,9 +19,7 @@ const fromApiResponseToPokemons = async (apiResponse) => {
       return await response.json();
     });
 
-    const pokemons = await Promise.all(promises);
-
-    return pokemons;
+    return await Promise.all(promises);
   }
 
   return [];

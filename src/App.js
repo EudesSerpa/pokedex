@@ -1,4 +1,5 @@
-import { Link, Route, Switch } from "wouter";
+import { Route, Switch } from "wouter";
+import { PokemonsContextProvider } from "context/PokemonsContext";
 
 import "./App.css";
 import Detail from "./pages/Detail";
@@ -9,10 +10,12 @@ function App() {
   return (
     <div className="App">
       <section className="App-content">
-        <Switch>
-          <Route path="/" component={Home} />
-          <Route path="/pokemon/:id" component={Detail} />
-        </Switch>
+        <PokemonsContextProvider>
+          <Switch>
+            <Route path="/" component={Home} />
+            <Route path="/pokemon/:id" component={Detail} />
+          </Switch>
+        </PokemonsContextProvider>
       </section>
     </div>
   );

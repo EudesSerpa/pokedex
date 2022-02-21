@@ -1,7 +1,17 @@
+.loader-wrapper {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  color: #000;
+  font-size: var(--fz-body-s);
+  font-weight: 700;
+}
+
 .pokeLoader {
   position: relative;
-  height: 60px;
-  width: 60px;
+  width: 45px;
+  aspect-ratio: 1;
+  margin-right: 5px;
 }
 
 .pokeLoader::before,
@@ -17,10 +27,10 @@
   /* Layers */
   background: radial-gradient(at 75% 15%, #fffb, #0000 35%),
     radial-gradient(at 80% 40%, #0000, #0008),
-    radial-gradient(circle 5px, #fff 94%, #0000),
-    radial-gradient(circle 10px, #000 94%, #0000),
-    linear-gradient(#f93318 0 0) top / 100% calc(50% - 5px),
-    linear-gradient(#fff 0 0) bottom / 100% calc(50% - 5px) #000;
+    radial-gradient(circle 4px, #fff 94%, #0000),
+    radial-gradient(circle 8px, #000 94%, #0000),
+    linear-gradient(#f93318 0 0) top / 100% calc(50% - 3.5px),
+    linear-gradient(#fff 0 0) bottom / 100% calc(50% - 3.5px) #000;
   background-repeat: no-repeat;
 
   animation: shake 1.2s infinite cubic-bezier(0.5, 120, 0.5, -120);
