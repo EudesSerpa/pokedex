@@ -1,6 +1,7 @@
 /**
  * Get Pokemons
  *  * Fetch Pokemons data from Poke API
+ *
  * @param { page: number, limit: number }
  * @returns Array | Array<Objetc>
  *

@@ -1,24 +1,36 @@
 import React from "react";
-import "./style.css";
+import { formattedId } from "styles/index.js";
+import {
+  PokeCardStyled,
+  PokeNumber,
+  TypeListItem,
+  PokeImage,
+} from "./styles.js";
 
-export default function PokeCard({ name, id, types, url }) {
-  const formatedId = `${id}`.padStart(3, "0");
+function PokeCard({ name, id, types, url }) {
   const mainType = types[0];
-  const listType = types.map((type) => <li key={type}>{type}</li>);
+  const listType = types.map((type) => (
+    <TypeListItem key={type}>{type}</TypeListItem>
+  ));
 
   return (
-    <article className={`card ${mainType}`}>
+    <PokeCardStyled to={`/pokemon/${id}`} maintype={mainType}>
       <header>
-        <p className="pokemon-name">{name}</p>
-        <p className="pokemon-number">{`#${formatedId}`}</p>
+        <p>{name}</p>
+        <PokeNumber>{`#${formattedId(id)}`}</PokeNumber>
       </header>
 
-      <div className="details">
-        <ul className="types">{listType}</ul>
-        <div className="img-container">
+      <div>
+        <ul>{listType}</ul>
+
+        <PokeImage>
           <img src={url} alt={name} loading="lazy" />
-        </div>
+        </PokeImage>
       </div>
-    </article>
+    </PokeCardStyled>
   );
 }
+
+export default React.memo(PokeCard, (prevPros, nextProps) => {
+  return prevPros.id === nextProps.id;
+});

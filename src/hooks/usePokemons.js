@@ -18,15 +18,7 @@ export function usePokemons() {
 
       getPokemons({ page })
         .then((body) => {
-          const nextPokemons = body.map((pokemon) => {
-            const { id, name, types, sprites } = pokemon;
-            const typesName = types.map((type) => type.type.name);
-            const url = sprites.other.home?.front_default;
-
-            return { id, name, url, typesName };
-          });
-
-          setPokemons((prevPokemons) => prevPokemons.concat(nextPokemons));
+          setPokemons((prevPokemons) => prevPokemons.concat(body));
           setIsLoadingPage(false);
         })
         .catch((e) => {

@@ -1,4 +1,5 @@
-import React, { useEffect, useCallback, useRef } from "react";
+import React, { useEffect, useRef } from "react";
+import { Link } from "wouter";
 import debounce from "just-debounce-it";
 import PokemonList from "components/PokemonList";
 import SearchForm from "components/SearchForm";
@@ -19,11 +20,17 @@ export default function Home() {
 
   useEffect(() => {
     if (isVisible) {
-      console.log(isVisible);
-
       debounce(() => setPage((prevPage) => prevPage + 1), 200)();
     }
   }, [isVisible, setPage]);
+
+  const data = pokemons.map((pokemon) => {
+    const { id, name, types, sprites } = pokemon;
+    const typesName = types.map((type) => type.type.name);
+    const url = sprites.other.home?.front_default;
+
+    return { id, name, url, typesName };
+  });
 
   return (
     <>
@@ -36,23 +43,23 @@ export default function Home() {
         <nav className="nav-menu">
           <ul>
             <li>
-              <a href="#" className="active">
+              <Link to="/" className="active">
                 Pokémons
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#">Abilities</a>
+              <Link to="/">Abilities</Link>
             </li>
             <li>
-              <a href="#">Moves</a>
+              <Link to="/">Moves</Link>
             </li>
             <li>
-              <a href="#">Types</a>
+              <Link to="/">Types</Link>
             </li>
           </ul>
         </nav>
 
-        <PokemonList pokemons={pokemons} />
+        <PokemonList pokemons={data} />
 
         {isLoadingPage && <Spinner />}
 
